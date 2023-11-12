@@ -1,0 +1,114 @@
+{
+  "users": [],
+
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Great Lands",
+      "year": 2018,
+      "genre": "Action",
+      "image": "https://picsum.photos/250/150",
+      "pg": "R",
+      "bookmarked": false
+    },
+    {
+      "id": 2,
+      "title": "The Small Lands",
+      "year": 2019,
+      "genre": "Comedy",
+      "image": "https://picsum.photos/250/150",
+      "pg": "G",
+      "bookmarked": false
+    },
+    {
+      "id": 3,
+      "title": "The Medium Lands",
+      "year": "2021",
+      "genre": "Comedy",
+      "image": "https://picsum.photos/250/150",
+      "pg": "G",
+      "bookmarked": false
+    },
+    {
+      "id": 4,
+      "title": "The Average Lands",
+      "year": 2021,
+      "genre": "Drama",
+      "image": "https://picsum.photos/250/150",
+      "pg": "PG-13",
+      "bookmarked": false
+    },
+    {
+      "id": 5,
+      "title": "The Poor Lands",
+      "year": 2022,
+      "genre": "Drama",
+      "image": "https://picsum.photos/250/150",
+      "pg": "PG-13",
+      "bookmarked": false
+    },
+    {
+      "id": 6,
+      "title": "The Rich Lands",
+      "year": 2023,
+      "genre": "Horror",
+      "image": "https://picsum.photos/250/150",
+      "pg": "NC-17",
+      "bookmarked": false
+    },
+    {
+      "id": 7,
+      "title": "The Oblivious Lands",
+      "year": 2024,
+      "genre": "Sports",
+      "image": "https://picsum.photos/250/150",
+      "pg": "R",
+      "bookmarked": false
+    },
+    {
+      "id": 8,
+      "title": "The Green Lands",
+      "year": 2019,
+      "genre": "Fantasy",
+      "image": "https://picsum.photos/250/150",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 9,
+      "title": "Dry Lands",
+      "year": 2018,
+      "genre": "SF",
+      "image": "https://picsum.photos/250/150",
+      "pg": "R",
+      "bookmarked": false
+    },
+    {
+      "id": 10,
+      "title": "Wet Lands",
+      "year": 2017,
+      "genre": "Historical",
+      "image": "https://picsum.photos/250/150",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 11,
+      "title": "Scorched Lands",
+      "year": 2019,
+      "genre": "Action",
+      "image": "https://picsum.photos/250/150",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 12,
+      "title": "White Lands",
+      "year": 2019,
+      "genre": "Romance",
+      "image": "https://picsum.photos/250/150",
+      "pg": "G",
+      "bookmarked": false
+    }
+  ]
+}
