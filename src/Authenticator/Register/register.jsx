@@ -5,8 +5,8 @@ import './register.css'
 import React  from 'react';
 
 export default function Register() {
-  const { email, setEmail } = useState("");
-  const { password, setPassword } = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ password, setPassword ] = useState("");
 
   return (
     <Form style={{ maxWidth: "500px", margin: "0 auto" }}>

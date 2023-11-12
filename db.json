@@ -1,16 +1,6 @@
 {
   "users": [],
-
   "movies": [
-    {
-      "id": 1,
-      "title": "The Great Lands",
-      "year": 2018,
-      "genre": "Action",
-      "image": "https://picsum.photos/250/150",
-      "pg": "R",
-      "bookmarked": false
-    },
     {
       "id": 2,
       "title": "The Small Lands",
@@ -103,9 +93,9 @@
     },
     {
       "id": 12,
-      "title": "White Lands",
-      "year": 2019,
-      "genre": "Romance",
+      "title": "White Landssadasdasd",
+      "year": "2019",
+      "genre": "Comedy",
       "image": "https://picsum.photos/250/150",
       "pg": "G",
       "bookmarked": false
