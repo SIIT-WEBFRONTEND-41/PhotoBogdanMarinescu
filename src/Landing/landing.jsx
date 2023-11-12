@@ -15,7 +15,7 @@ export default function Landing() {
 
   function bookmark(movie, bookmarked) {
     movie.bookmarked = !bookmarked;
-    setMovies(structuredClone(movies));
+    setMovies(movies.slice());
   }
 
   useEffect(() => {
@@ -66,7 +66,6 @@ export default function Landing() {
       </section>
 
       <section className="movie-container">
-        <a href=''></a>
         {movies.map((movie) => (
           <Movie key={movie.id} movie={movie} bookmark={bookmark}></Movie>
         ))}
