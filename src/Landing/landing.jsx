@@ -63,7 +63,7 @@ export default function Landing() {
   if (error) {
     return (
       <section>
-        There has been a problem loading our movies. Please try again later.
+        There has been a problem loading our cards. Please try again later.
       </section>
     )
   }
@@ -72,12 +72,12 @@ export default function Landing() {
     <main className="main">
 
       <header>
-        <h3>Recommended for you</h3>
+        <h3>Cards in library:</h3>
       </header>
 
       <section className="ph">
         <input
-          placeholder="Search for a movie"
+          placeholder="Search for a card"
           onKeyUp={(event) =>
             setSearchTerm(event.target.value.toLowerCase().trim())
           }

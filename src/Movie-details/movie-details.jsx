@@ -63,15 +63,15 @@ export default function MovieDetails() {
 
   return (
     <section>
-      { showDialog && <Dialog yesCallback={deleteMovie} noCallback={hideDeleteDialog} title="Are you sure you want to remove this movie?"></Dialog> }
+      { showDialog && <Dialog yesCallback={deleteMovie} noCallback={hideDeleteDialog} title="Are you sure you want to remove this card?"></Dialog> }
       <article className="movie">
         <div className="movie__image-container">
           <img src={movie?.image} alt="Movie"></img>
         </div>
         <p className="movie__footer">
           <span className="movie__year">{movie?.year}</span>
-          <span className="movie__genre">{movie?.genre}</span>
-          <span className="movie__pg">{movie?.pg}</span>
+          <span className="movie__description">{movie?.description}</span>
+          <span className="movie__author">{movie?.author}</span>
         </p>
         <h5 className="movie__title">{movie?.title}</h5>
       </article>

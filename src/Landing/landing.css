@@ -22,7 +22,7 @@
     margin-top: var(--size-small);
 }
 
-.movie__year::after, .movie__genre::after {
+.movie__year::after, .movie__description::after {
 content: "\00B7";
 margin: 0 var(--size-small);
 }

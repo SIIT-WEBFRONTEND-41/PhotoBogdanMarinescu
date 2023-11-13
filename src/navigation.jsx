@@ -15,13 +15,13 @@ export default function Navigation() {
         <nav>
         <ul>
           <li>
-            <Link to="/">Movies</Link>
+            <Link to="/">Cards</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">Profile Page</Link>
           </li>
           <li>
-            <Link to="/create-movie">Create Movie</Link>
+            <Link to="/create-movie">Create Card</Link>
           </li>
           {
             !user?.user

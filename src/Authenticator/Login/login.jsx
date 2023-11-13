@@ -6,6 +6,8 @@ import { UserContext } from "../../user-context";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(null);
@@ -66,6 +68,29 @@ export default function Login() {
 
   return (
     <Form style={{ maxWidth: "500px", margin: "0 auto" }} onSubmit={register}>
+      
+      <Form.Group className="mb-3" controlId="formBasicFirstName">
+        <Form.Label>First Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter first name"
+          value={firstName}
+          onChange={(event) => setFirstName(event.target.value)}
+          required 
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicLastName">
+        <Form.Label>Last Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter last name"
+          value={lastName}
+          onChange={(event) => setLastName(event.target.value)}
+          required 
+        />
+      </Form.Group>
+
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
@@ -73,6 +98,7 @@ export default function Login() {
           placeholder="Enter email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
+          required
         />
         <Form.Text>We'll never share your email with anyone else.</Form.Text>
       </Form.Group>
@@ -84,6 +110,7 @@ export default function Login() {
           placeholder="Password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          required
         />
         {passwordError && (
           <Form.Text className="text-red">{passwordError}</Form.Text>

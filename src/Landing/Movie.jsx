@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export function Movie({ movie, bookmark }) {
   // const {movie, bookmark} = props;
-  const { id, image, year, genre, pg, title, bookmarked } = movie;
+  const { id, image, year, description, author, title, bookmarked } = movie;
 
   return (
     <article className="movie">
@@ -23,8 +23,8 @@ export function Movie({ movie, bookmark }) {
       </div>
       <p className="movie__footer">
         <span className="movie__year">{year}</span>
-        <span className="movie__genre">{genre}</span>
-        <span className="movie__pg">{pg}</span>
+        <span className="movie__description">{description}</span>
+        <span className="movie__author">{author}</span>
       </p>
       <h5 className="movie__title">{title}</h5>
     </article>

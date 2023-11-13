@@ -3,14 +3,14 @@ export default function MovieForm(props) {
 
     function handleSubmit(event) {
       event.preventDefault();
-      const { url, year, genre, pg, title } = event.target;
+      const { url, year, description, author, title } = event.target;
 
       const updatedMovie = {
         ...movie,
         image: url.value,
         year: year.value,
-        genre: genre.value,
-        pg: pg.value,
+        description: description.value,
+        author: author.value,
         title: title.value,
     };
     onSubmit(updatedMovie);
@@ -42,33 +42,24 @@ export default function MovieForm(props) {
         </fieldset>
 
         <fieldset>
-          <label htmlFor="genre">Genre:</label>
-          <select id="genre" name="genre" defaultValue={movie?.genre}>
-            <option value="Comedy">Comedy</option>
-            <option value="Action">Action</option>
-            <option value="SF">SF</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Drama">Drama</option>
-            <option value="Thriler">Thriler</option>
-            <option value="Historical">Historical</option>
-            <option value="Horror">Horror</option>
-            <option value="Biography">Biography</option>
-            <option value="Documentary">Documentary</option>
-            <option value="Animation">Animation</option>
-            <option value="Mystery">Mystery</option>
-            <option value="Romance">Romance</option>
-            <option value="Sports">Sports</option>
+          <label htmlFor="description">Description:</label>
+          <select id="description" name="description" defaultValue={movie?.description}>
+            <option value="Animals">Animals</option>
+            <option value="Buildings">Buildings</option>
+            <option value="Nature">Nature</option>
+            <option value="Objects">Objects</option>
+            <option value="People">People</option>
           </select>
         </fieldset>
 
         <fieldset>
-          <label htmlFor="pg">Rating:</label>
-          <select id="pg" name="pg" defaultValue={movie?.pg}>
-            <option value="G">G</option>
-            <option value="PG">PG</option>
-            <option value="PG-13">PG-13</option>
-            <option value="R">R</option>
-            <option value="NC-17">NC-17</option>
+          <label htmlFor="author">Author:</label>
+          <select id="author" name="author" defaultValue={movie?.author}>
+            <option value="G">Grigore</option>
+            <option value="P">Praid</option>
+            <option value="D">Daniel</option>
+            <option value="R">Robert</option>
+            <option value="N">Nicola</option>
           </select>
         </fieldset>
 
