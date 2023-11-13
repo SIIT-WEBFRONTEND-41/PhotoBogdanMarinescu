@@ -7,6 +7,7 @@ import Navigation from './navigation';
 import React from 'react';
 import MoviesContextProvider from './movies-context';
 import Register from './Authenticator/Register/register';
+import Login from './Authenticator/Login/login';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/movie/:id" element={<MovieDetails />}></Route>
         <Route path="/create-movie" element={<CreateMovie />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="*" element={<div>Page not found 404</div>}></Route>
       </Routes>
     </Router>

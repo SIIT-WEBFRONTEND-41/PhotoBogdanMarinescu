@@ -1,6 +1,21 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "bogdan.marinescu94@yahoo.com",
+      "password": "$2a$10$4plwZckITfb5BHSPI.VZpuIuwyUUT9b19rD.Yy8PwvyGE3it3oHk.",
+      "id": 1
+    }
+  ],
   "movies": [
+    {
+      "id": 1,
+      "title": "The Great Lands",
+      "year": 2017,
+      "genre": "Drama",
+      "image": "https://picsum.photos/250/150",
+      "pg": "PG-13",
+      "bookmarked": false
+    },
     {
       "id": 2,
       "title": "The Small Lands",

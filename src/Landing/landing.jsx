@@ -2,8 +2,6 @@ import "./landing.css";
 import { useState, useEffect, useContext } from "react";
 import { Movie } from "./Movie";
 import { MoviesContext } from "../movies-context";
-import React from 'react';
-
 
 
 export default function Landing() {

@@ -1,7 +1,6 @@
 import BookmarkIcon from "../Icons/Bookmark/bookmark";
 import BookmarkFilledIcon from "../Icons/Bookmark-filled/bookmark-filled";
 import { Link } from 'react-router-dom';
-import React  from 'react';
 
 export function Movie({ movie, bookmark }) {
   // const {movie, bookmark} = props;

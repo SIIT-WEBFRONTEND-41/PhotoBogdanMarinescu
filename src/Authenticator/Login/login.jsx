@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import './register.css'
+import './login.css'
 
-export default function Register() {
+export default function Login() {
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ passwordError, setPasswordError ] = useState(null);
@@ -15,7 +15,7 @@ export default function Register() {
       password,
     };
 
-    fetch("http://localhost:3001/register", {
+    fetch("http://localhost:3001/login", {
       method: 'POST',
       body: JSON.stringify(body),
       headers: {
@@ -23,7 +23,7 @@ export default function Register() {
       } 
     })
     .then((response) => response.json())
-    .then((response) => console.log(response));
+    .then((response) => localStorage.setItem('access_token', JSON.stringify(response)));
   }
 
   useEffect(() => {
