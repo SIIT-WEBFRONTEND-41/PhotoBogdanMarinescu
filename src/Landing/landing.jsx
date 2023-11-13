@@ -2,14 +2,15 @@ import "./landing.css";
 import { useState, useEffect, useContext } from "react";
 import { Movie } from "./Movie";
 import { MoviesContext } from "../movies-context";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Landing() {
   const [initialMovies, setInitialMovies] = useState([]);
-  // const [movies, setMovies] = useState(initialMovies);
   const [searchTerm, setSearchTerm] = useState();
   const [error, setError] = useState(null);
   const { movies, setMovies } = useContext(MoviesContext);
+  const navigate = useNavigate();
 
   function bookmark(movie, bookmarked) {
     movie.bookmarked = !bookmarked;
@@ -19,7 +20,15 @@ export default function Landing() {
   useEffect(() => {
     setError(null);
     fetch("http://localhost:3001/movies")
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+         return response.json();
+        }
+        if(response.status === 401) {
+          navigate('/login');
+        }
+        throw new Error(response);
+      })
       .then((fetchedMovies) => {
         setMovies(fetchedMovies);
         setInitialMovies(fetchedMovies);
