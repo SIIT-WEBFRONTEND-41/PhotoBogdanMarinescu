@@ -19,7 +19,7 @@
     {
       "id": 2,
       "title": "The Small Lands",
-      "year": 2019,
+      "year": "2019",
       "genre": "Comedy",
       "image": "https://picsum.photos/250/150",
       "pg": "G",
@@ -37,10 +37,10 @@
     {
       "id": 4,
       "title": "The Average Lands",
-      "year": 2021,
-      "genre": "Drama",
+      "year": "2021",
+      "genre": "Comedy",
       "image": "https://picsum.photos/250/150",
-      "pg": "PG-13",
+      "pg": "G",
       "bookmarked": false
     },
     {
@@ -108,7 +108,7 @@
     },
     {
       "id": 12,
-      "title": "White Landssadasdasd",
+      "title": "White Lands",
       "year": "2019",
       "genre": "Comedy",
       "image": "https://picsum.photos/250/150",

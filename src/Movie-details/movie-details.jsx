@@ -3,21 +3,28 @@ import { useContext, useEffect, useState } from "react";
 import Dialog from '../Dialog/dialog';
 import MovieForm from '../Movie-form/movie-form';
 import { MoviesContext } from "../movies-context";
+import { UserContext, getAccessToken } from "../user-context";
 
 export default function MovieDetails() {
   let { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [showDialog, setShowDialog] = useState(false);
   const { movies } = useContext(MoviesContext);
-  const navigate = useNavigate();
+  const { user } = useContext(UserContext);
    
+  const navigate = useNavigate();
+  const bearerToken = user?.accessToken || getAccessToken();
 
   useEffect(() => {
     const selectedMovie = movies.find((storedMovie) => storedMovie.id === Number(id));
     if (selectedMovie) {
       setMovie(selectedMovie);
     } else {
-      fetch(`http://localhost:3001/movies/${id}`)
+      fetch(`http://localhost:3001/movies/${id}`, {
+        headers: {
+          Authorization: `Bearer ${bearerToken}`,
+        },
+      })
       .then((response) => response.json())
       .then((movieFromServer) => setMovie(movieFromServer));
     }
@@ -29,6 +36,7 @@ export default function MovieDetails() {
       body: JSON.stringify(updatedMovie),
       headers: {
         'content-type': 'application/json',
+        Authorization: `Bearer ${bearerToken}`,
       }
     })
       .then((response) => response.json())
@@ -42,6 +50,10 @@ export default function MovieDetails() {
   function deleteMovie () {
     fetch(`http://localhost:3001/movies/${id}`, {
         method: "DELETE",
+        headers: {
+          'content-type': 'application/json',
+          Authorization: `Bearer ${bearerToken}`,
+      },
       }).then(() => navigate("/"));
   }
 

@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { Movie } from "./Movie";
 import { MoviesContext } from "../movies-context";
 import { useNavigate } from "react-router-dom";
+import { UserContext, getAccessToken } from "../user-context";
 
 
 export default function Landing() {
@@ -11,15 +12,26 @@ export default function Landing() {
   const [error, setError] = useState(null);
   const { movies, setMovies } = useContext(MoviesContext);
   const navigate = useNavigate();
+  const { user } = useContext(UserContext);
 
   function bookmark(movie, bookmarked) {
     movie.bookmarked = !bookmarked;
-    setMovies(movies.slice());
+    // setMovies(movies.slice());
+    setMovies(structuredClone(movies));
   }
 
   useEffect(() => {
     setError(null);
-    fetch("http://localhost:3001/movies")
+
+    const bearerToken = user?.accessToken || getAccessToken();
+    
+    fetch("http://localhost:3001/movies", 
+    {
+      headers: {
+        Authorization: `Bearer ${bearerToken}`,
+      },
+    }
+    )
       .then((response) => {
         if (response.ok) {
          return response.json();

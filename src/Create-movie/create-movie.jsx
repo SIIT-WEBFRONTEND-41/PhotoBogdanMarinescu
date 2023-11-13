@@ -1,8 +1,14 @@
 import MovieForm from '../Movie-form/movie-form';
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { UserContext, getAccessToken } from '../user-context';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateMovie() {
     const [success, setSuccess] = useState(false);
+    const { user } = useContext(UserContext);
+    const navigate = useNavigate();
+    const bearerToken = user?.accessToken || getAccessToken();
+    
 
     function submit(updatedMovie) {
         setSuccess(false);
@@ -11,6 +17,7 @@ export default function CreateMovie() {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer ${bearerToken}`,
             },
             body: JSON.stringify(updatedMovie),
         })

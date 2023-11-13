@@ -3,12 +3,14 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./login.css";
 import { UserContext } from "../../user-context";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(null);
   const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   function register(event) {
     event.preventDefault();
@@ -28,6 +30,7 @@ export default function Login() {
       .then((response) => {
         localStorage.setItem("access_token", JSON.stringify(response));
         setUser(response);
+        navigate('/');
       });
   }
 
