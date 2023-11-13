@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import './login.css'
+import "./login.css";
+import { UserContext } from "../../user-context";
 
 export default function Login() {
-  const [ email, setEmail ] = useState("");
-  const [ password, setPassword ] = useState("");
-  const [ passwordError, setPasswordError ] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState(null);
+  const { user, setUser } = useContext(UserContext);
 
-  function register(event){
+  function register(event) {
     event.preventDefault();
     const body = {
       email,
@@ -16,35 +18,41 @@ export default function Login() {
     };
 
     fetch("http://localhost:3001/login", {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(body),
       headers: {
-        'Content-Type': 'application/json'
-      } 
+        "Content-Type": "application/json",
+      },
     })
-    .then((response) => response.json())
-    .then((response) => localStorage.setItem('access_token', JSON.stringify(response)));
+      .then((response) => response.json())
+      .then((response) => {
+        localStorage.setItem("access_token", JSON.stringify(response));
+        setUser(response);
+      });
   }
 
   useEffect(() => {
     function validatePassword(password) {
-      const specialCharacters = ['*', '#', '@', '&', '%', '$', '!', '?'];
+      const specialCharacters = ["*", "#", "@", "&", "%", "$", "!", "?"];
       if (password <= 8) {
-        setPasswordError('Password must be at least 8 characters long.');
+        setPasswordError("Password must be at least 8 characters long.");
         return;
       }
-  
+
       let hasSpecialCharacter = false;
-  
-      for(let character of password) {
+
+      for (let character of password) {
         const hasCharacter = specialCharacters.includes(character);
         if (hasCharacter) {
           hasSpecialCharacter = true;
         }
       }
-  
+
       if (!hasSpecialCharacter) {
-        setPasswordError('Your password must have at least one special character.', specialCharacters)
+        setPasswordError(
+          "Your password must have at least one special character.",
+          specialCharacters
+        );
       } else {
         setPasswordError(null);
       }
@@ -63,9 +71,7 @@ export default function Login() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
-        <Form.Text>
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Text>We'll never share your email with anyone else.</Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -77,10 +83,8 @@ export default function Login() {
           onChange={(event) => setPassword(event.target.value)}
         />
         {passwordError && (
-        <Form.Text className="text-red">
-          { passwordError }
-        </Form.Text>
-      )}
+          <Form.Text className="text-red">{passwordError}</Form.Text>
+        )}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicCheckbox">

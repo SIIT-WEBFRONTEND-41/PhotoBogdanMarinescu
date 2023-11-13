@@ -8,6 +8,7 @@ import React from 'react';
 import MoviesContextProvider from './movies-context';
 import Register from './Authenticator/Register/register';
 import Login from './Authenticator/Login/login';
+import UserContextProvider from './user-context';
 
 
 
@@ -15,7 +16,8 @@ function App() {
   
 
   return (
-    <MoviesContextProvider>
+    <UserContextProvider>
+      <MoviesContextProvider>
     <Router>
       <Navigation />
 
@@ -30,6 +32,7 @@ function App() {
       </Routes>
     </Router>
     </MoviesContextProvider>
+    </UserContextProvider>
   );
 }
 
