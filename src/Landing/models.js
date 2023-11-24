@@ -1,11 +1,11 @@
 export class MovieItem {
-    constructor(id, title, year, genre, image, pg, bookmarked) {
+    constructor(id, title, year, description, image, author, bookmarked) {
       this.id = id;
       this.title = title;
       this.year = year;
-      this.genre = genre;
+      this.description = description;
       this.image = image;
-      this.pg = pg;
+      this.author = author;
       this.bookmarked = bookmarked;
     }
 
