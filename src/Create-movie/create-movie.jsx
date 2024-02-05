@@ -1,3 +1,4 @@
+import "./create-movie.css";
 import MovieForm from '../Movie-form/movie-form';
 import { useContext, useState } from 'react'
 import { UserContext, getAccessToken } from '../user-context';
@@ -27,7 +28,7 @@ export default function CreateMovie() {
     }
 
     return (
-        <section>
+        <section className='create-movie-section'>
             { success && <p>Operation has been successful</p>}
             <MovieForm onSubmit={submit}></MovieForm>
         </section>

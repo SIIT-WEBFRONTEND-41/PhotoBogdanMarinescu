@@ -1,3 +1,4 @@
+import "./movie-details.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import Dialog from '../Dialog/dialog';
@@ -62,7 +63,7 @@ export default function MovieDetails() {
   }
 
   return (
-    <section>
+    <section className="movie-details">
       { showDialog && <Dialog yesCallback={deleteMovie} noCallback={hideDeleteDialog} title="Are you sure you want to remove this card?"></Dialog> }
       <article className="movie">
         <div className="movie__image-container">

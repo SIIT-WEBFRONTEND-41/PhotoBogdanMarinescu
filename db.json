@@ -4,6 +4,16 @@
       "email": "bogdan.marinescu94@yahoo.com",
       "password": "$2a$10$4plwZckITfb5BHSPI.VZpuIuwyUUT9b19rD.Yy8PwvyGE3it3oHk.",
       "id": 1
+    },
+    {
+      "email": "mpapa997@gmail.com",
+      "password": "$2a$10$V8hTrR5i6kTNrFLn8gTWA.7FW.i1evQ6Hl7MxxLIEsBSIuv00YT/C",
+      "id": 2
+    },
+    {
+      "email": "beeches.dapple-0l@icloud.com",
+      "password": "$2a$10$2JwyHn9rJ/VrE72X9OTgk.virxyR2M6KGvQmxHxaB/.e5KQWdT/Uy",
+      "id": 3
     }
   ],
   "movies": [
